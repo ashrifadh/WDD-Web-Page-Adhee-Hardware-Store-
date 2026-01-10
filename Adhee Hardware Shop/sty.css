@@ -1,0 +1,334 @@
+:root {
+    --primary-dark: #2a3f54;
+    --primary-light: #3a5068;
+    --accent-yellow: #f8b739;
+    --accent-light: #f8f9fa;
+    --danger-color: #d62839;
+    --success-color: #06d6a0;
+    --gray-color: #6c757d;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--accent-light);
+    color: #333;
+    line-height: 1.6;
+}
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.admin-header {
+    background-color: var(--primary-dark);
+    color: var(--accent-yellow);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.admin-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.admin-header i {
+    margin-right: 10px;
+}
+
+.admin-content {
+    padding: 2rem;
+    flex: 1;
+    background-color: var(--accent-light);
+}
+
+.card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-top: 4px solid var(--accent-yellow);
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+}
+
+.card h2 i {
+    margin-right: 10px;
+    color: var(--accent-yellow);
+}
+
+.product-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 0 3px rgba(248, 183, 57, 0.2);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-yellow);
+    color: var(--primary-dark);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #b51e2d;
+}
+
+.btn-warning {
+    background-color: var(--accent-yellow);
+    color: var(--primary-dark);
+}
+
+.btn-warning:hover {
+    background-color: #ffc233;
+}
+
+.btn-secondary {
+    background-color: var(--gray-color);
+    color: white;
+    margin-left: 0.5rem;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: var(--primary-dark);
+    color: var(--accent-yellow);
+    font-weight: 500;
+}
+
+tr:hover td {
+    background-color: rgba(248, 183, 57, 0.1);
+}
+
+.product-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.actions-cell {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .admin-content {
+        padding: 1rem;
+    }
+    
+    .product-form {
+        grid-template-columns: 1fr;
+    }
+    
+    th, td {
+        padding: 0.75rem;
+    }
+    
+    .actions-cell {
+        flex-direction: column;
+    }
+}
+
+/* Notification styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    color: white;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.success {
+    background-color: var(--success-color);
+}
+
+.notification.error {
+    background-color: var(--danger-color);
+}
+
+.notification i {
+    margin-right: 10px;
+}
+
+/* Category badges */
+.category-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.category-Tools {
+    background-color: #ffddd2;
+    color: #d62828;
+}
+
+.category-Plumbing {
+    background-color: #d8f3dc;
+    color: #2d6a4f;
+}
+
+category-Electrical {
+    background-color: #fff3b0;
+    color: #9d0208;
+}
+
+.category-Hardware {
+    background-color: #e2cfea;
+    color: #5a189a;
+}
+
+.category-Paint {
+    background-color: #caf0f8;
+    color: #0077b6;
+}
+
+.category-Building Materials {
+    background-color: #f8edeb;
+    color: #6a040f;
+}
+
+.category-Safety Equipment {
+    background-color: #f1faee;
+    color: #1b4332;
+}
+
+.category-Outdoor {
+    background-color: #e9edc9;
+    color: #606c38;
+}

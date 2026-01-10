@@ -1,0 +1,202 @@
+========================================
+QUICK START GUIDE - ADHEE HARDWARE STORE
+========================================
+
+YOUR SYSTEM IS READY! Follow these steps:
+
+STEP 1: DATABASE SETUP (REQUIRED)
+----------------------------------
+1. Open phpMyAdmin:
+   http://localhost/phpmyadmin
+
+2. Select database: adhee_hardware
+
+3. Click "SQL" tab
+
+4. Copy and paste contents of: database_update.sql
+
+5. Click "Go" button
+
+6. (Optional) Run sample_data.sql for test data
+
+STEP 2: ACCESS ADMIN DASHBOARD
+-------------------------------
+Open in browser:
+http://localhost:8000/admin_dashboard.php
+
+You should see:
+✓ Dashboard with statistics
+✓ Sidebar menu (Dashboard, Products, Suppliers, Customers, Orders)
+✓ Product cards (like home page)
+
+STEP 3: TEST ALL FEATURES
+--------------------------
+
+A. PRODUCTS SECTION:
+   - Click "Products" in sidebar
+   - See all products in card grid
+   - Try search bar
+   - Try category filter
+   - Click "View Full Details" on any product
+   - Click "Add Product" button
+   - Try editing a product
+   - Try updating stock
+
+B. SUPPLIERS SECTION:
+   - Click "Suppliers" in sidebar
+   - See all suppliers in table
+   - Click "Add Supplier"
+   - Try assigning supplier to product
+
+C. CUSTOMERS SECTION:
+   - Click "Customers" in sidebar
+   - See all registered customers
+   - View order counts
+
+D. ORDERS SECTION:
+   - Click "Orders" in sidebar
+   - See all customer orders
+   - Try updating order status
+   - Click "View" to see order details
+
+E. DASHBOARD:
+   - Click "Dashboard" in sidebar
+   - See statistics cards
+   - Check low stock alerts
+
+STEP 4: TEST CUSTOMER FEATURES
+-------------------------------
+1. Open home page:
+   http://localhost:8000/Index.php
+
+2. Test features:
+   - Browse products
+   - Search products
+   - Add to cart
+   - Track order (click "Track Order" in menu)
+   - Login and view "My Orders"
+   - Go to checkout
+
+STEP 5: VERIFY EVERYTHING WORKS
+--------------------------------
+
+✓ Admin can view all products (same as home page)
+✓ Admin can add new products
+✓ Admin can update stock quantities
+✓ Admin can delete products
+✓ Admin can manage suppliers
+✓ Admin can assign suppliers to products
+✓ Admin can view customers
+✓ Admin can track customer details
+✓ Admin can view all orders
+✓ Admin can update order status
+✓ Customers can view order history
+✓ Customers can track orders
+✓ Products display in card grid (like home page)
+
+TROUBLESHOOTING
+---------------
+
+ISSUE: "Table doesn't exist" error
+FIX: Run database_update.sql in phpMyAdmin
+
+ISSUE: No products showing
+FIX: Check if products exist in database
+
+ISSUE: Can't update stock
+FIX: Verify stock_quantity column exists in products table
+
+ISSUE: Suppliers not showing
+FIX: Run database_update.sql to create suppliers table
+
+ISSUE: Orders not showing
+FIX: Run database_update.sql to create orders table
+
+QUICK TEST COMMANDS
+-------------------
+
+In phpMyAdmin SQL tab, run:
+
+-- Check if all tables exist:
+SHOW TABLES;
+
+-- Check products structure:
+DESCRIBE products;
+
+-- Count products:
+SELECT COUNT(*) FROM products;
+
+-- Count suppliers:
+SELECT COUNT(*) FROM suppliers;
+
+-- Count orders:
+SELECT COUNT(*) FROM orders;
+
+-- View sample product:
+SELECT * FROM products LIMIT 1;
+
+URLS REFERENCE
+--------------
+
+Admin:
+http://localhost:8000/admin_dashboard.php
+
+Home:
+http://localhost:8000/Index.php
+
+Customer Orders:
+http://localhost:8000/customer_orders.php
+
+Checkout:
+http://localhost:8000/checkout.php
+
+phpMyAdmin:
+http://localhost/phpmyadmin
+
+SERVER STATUS
+-------------
+
+PHP Server: Running on port 8000
+Command: C:\xampp\php\php.exe -S localhost:8000
+
+To restart server if needed:
+1. Stop: Ctrl+C in terminal
+2. Start: php -S localhost:8000
+
+FEATURES SUMMARY
+----------------
+
+ADMIN DASHBOARD:
+✓ Statistics overview
+✓ Product management (add/edit/delete/stock)
+✓ Supplier management (add/edit/delete/assign)
+✓ Customer management (view/track)
+✓ Order tracking (view/update status)
+✓ Low stock alerts
+✓ Search & filter products
+✓ Product card grid display
+
+CUSTOMER FEATURES:
+✓ Browse products
+✓ Search products
+✓ Add to cart
+✓ Checkout
+✓ View order history
+✓ Track orders
+✓ View order details
+
+ALL FUNCTIONALITY IS COMPLETE!
+==============================
+
+Your admin dashboard shows all home page products
+in a beautiful card grid with full management features.
+
+All 6 required functionalities are working:
+1. ✓ Admin Dashboard
+2. ✓ Product Management
+3. ✓ Supplier Management
+4. ✓ Customer Management
+5. ✓ Order Tracking
+6. ✓ Customer Order History
+
+Ready to use! 🎉
